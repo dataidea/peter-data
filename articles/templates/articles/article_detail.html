@@ -1,7 +1,32 @@
 {% extends 'base_layout.html' %} {% block content%}
-<h1>Articles Details</h1>
-<div class="article-detail">
+<div class="detail">
+  <h1>{{article.title}}</h1>
+  <img src = "{{article.thumb.url}}"></img>
   <p>{{article.body}}</p>
-  <p>{{article.date}}</p>
+  <p class="date">{{article.date}}</p>
+  <div class= "share">
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="share-button twitter" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a href="whatsapp://send?text=The text to share!" class= "share-button whatsapp" data-action="share/whatsapp/share" style= "" value="Whatsapp">Whatsapp</a>
+  </div>
 </div>
+<section id="blog">
+  <h1 class="section-heading">Blogs</h1>
+  {% for article in articles %}
+  <div class="article wrapper">
+    <main class="">
+      <h2>{{article.title}}</h2>
+      <p>{{article.snippet}}</p>
+      <p class="date">{{article.date}}</p>
+      <a href="{% url 'article:detail' slug=article.slug %}">Read more</a>
+    </main>
+    <aside>
+      <div class="img-container">
+        <img src="{{article.thumb.url}}" />
+      </div>
+    </aside>
+  </div>
+  <hr />
+  {% endfor %}
+  <a href="{% url 'article:list' %}" class="see-more">See more articles</a>
+</section>
 {% endblock content%}

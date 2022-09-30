@@ -1,0 +1,49 @@
+{% extends 'base_layout.html' %} {% block content%}
+<div class="detail">
+  <h1>{{service.title}}</h1>
+  <img src="{{service.thumb.url}}" />
+  <p>{{service.body}}</p>
+  <p class="date">{{service.date}}</p>
+  <div class="share">
+    <a
+      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      class="share-button twitter"
+      data-show-count="false"
+      >Tweet</a
+    >
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+    <a
+      href="whatsapp://send?text=The text to share!"
+      class="share-button whatsapp"
+      data-action="share/whatsapp/share"
+      style=""
+      value="Whatsapp"
+      >Whatsapp</a
+    >
+  </div>
+</div>
+<section>
+  <h1 class="section-heading">Other Services</h1>
+  {% for service in services %}
+  <div class="service wrapper">
+    <main class="">
+      <h2>{{service.title}}</h2>
+      <p>{{service.snippet}}</p>
+      <p class="date">{{service.date}}</p>
+      <a href="{% url 'service:detail' slug=service.slug %}">Read more</a>
+    </main>
+    <aside>
+      <div class="img-container">
+        <img src="{{service.thumb.url}}" />
+      </div>
+    </aside>
+  </div>
+  <hr />
+  {% endfor %}
+  <a href="{% url 'service:list' %}" class="see-more">See more services</a>
+</section>
+{% endblock content%}

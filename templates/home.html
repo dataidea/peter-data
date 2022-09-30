@@ -1,14 +1,133 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>shafara django blog</title>
-    {% comment %}
-    <link rel="stylesheet" href="/static/style.css" />
-    {% endcomment %}
-  </head>
-  <body>
-    <h1>Home page</h1>
-    <p>Shafara loves django</p>
-  </body>
-</html>
+{% extends 'base_layout.html' %} {% block content %} {% load static %}
+<section class="hero">
+  <main>
+    <h1>Prof. Dr. Irumba</h1>
+    <p>
+      Africa's leading traditional herbalist and spritual healer based in Durban
+      South Africa
+    </p>
+    <p><a href="#about">read about</a></p>
+  </main>
+  <aside><img src = "{% static "media/profile1.jpeg" %}"/></aside>
+</section>
+
+{% comment %} Services {% endcomment %}
+<section id="services">
+  <h1 class="section-heading">Services</h1>
+  {% for service in services %}
+  <div class="service wrapper">
+    <main class="">
+      <h2>{{service.title}}</h2>
+      <p>{{service.snippet}}</p>
+      <p class="date">{{service.date}}</p>
+      <a href="{% url 'service:detail' slug=service.slug %}">Read more</a>
+    </main>
+    <aside>
+      <div class="img-container">
+        <img src="{{service.thumb.url}}" />
+      </div>
+    </aside>
+  </div>
+  <hr />
+  {% endfor %}
+  <a href="{% url 'service:list' %}" class="see-more">See more services</a>
+</section>
+
+{% comment %} blocg section {% endcomment %}
+<section id="blog">
+  <h1 class="section-heading">Blogs</h1>
+  {% for article in articles %}
+  <div class="article wrapper">
+    <main class="">
+      <h2>{{article.title}}</h2>
+      <p>{{article.snippet}}</p>
+      <p class="date">{{article.date}}</p>
+      <a href="{% url 'article:detail' slug=article.slug %}">Read more</a>
+    </main>
+    <aside>
+      <div class="img-container">
+        <img src="{{article.thumb.url}}" />
+      </div>
+    </aside>
+  </div>
+  <hr />
+  {% endfor %}
+  <a href="{% url 'article:list' %}" class="see-more">See more articles</a>
+</section>
+
+{% comment %} Testimonials {% endcomment %}
+<div class="testimonials">
+  <h1>What our clients say</h1>
+  <div class="testimonials-wrapper">
+    <div class="testimony">
+      <p>
+        "I am really satisfied with your services, and thank you for offering me
+        a way out in my love life. At first, i thought that i had lost the love
+        of my life forever. Thanks a lot"
+      </p>
+      <h3>Derrick <small>Tanzania</small></h3>
+    </div>
+    <div class="testimony">
+      <p>
+        "Thank you, Doctor Irumba, for the remedy you gave me. Now my lover is
+        back and we are happy"
+      </p>
+      <h3>Kimaswa <small>South Sudan</small></h3>
+    </div>
+    <div class="testimony">
+      <p>
+        "It's been 7 years since a had promotion at work. Despite my heard work,
+        I was always overlooked. I was very frustrated. However, a friend
+        refereed me to Doctor Ali Cobra. I have never been happier. 3 Promotions
+        in 1 year"
+      </p>
+      <h3>Namugaya <small>Uganda</small></h3>
+    </div>
+  </div>
+</div>
+
+<div id="faqs">
+  <div>
+    <h1>Frequently Asked Questions</h1>
+    <button class="accordion">When can I pay Dr Trumba a visit?</button>
+    <div class="panel">
+      <p>Dr Irumba is always at your service</p>
+    </div>
+
+    <button class="accordion">
+      Does Dr Irumba recieve money in foreign currency?
+    </button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">
+      What kinds of people does Dr Irumba work on?
+    </button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+{% endblock content %}

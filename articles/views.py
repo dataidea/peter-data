@@ -1,7 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Article
-
 # Create your views here.
 
 
@@ -12,4 +10,5 @@ def articles_list(request):
 
 def article_detail(request, slug):
     article = Article.objects.get(slug=slug)
-    return render(request, 'articles/article_detail.html', {'article': article})
+    articles = Article.objects.all().order_by('date')[:3]
+    return render(request, 'articles/article_detail.html', {'article': article, 'articles': articles})

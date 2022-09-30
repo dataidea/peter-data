@@ -1,13 +1,150 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <title>shafara django blog</title>
-    <link rel="stylesheet" href="/static/styles/style.css" />
+    <link rel="stylesheet" href="{% static "assets/styles/style.css" %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <nav>The navigation bar goes here</nav>
-    {% block content %} {% endblock content %}
+    <div class="floating-contacts">
+      <a href="tel:++27685851567">call</a>
+      <a href="https://wa.me/+27685851567" target="_blank">WhatsApp</a>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <div class="container">
+      <div class="nav-container">
+        <nav>
+          <div class="company">
+            <div>
+              <h1>Prof. Dr. Irumba</h1>
+              <p>African Traditional Healer</p>
+            </div>
+            <button class="menu-icon">Menu</button>
+          </div>
+          <div class="menu-container">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/#services">Services</a></li>
+              <li><a href="/#blog">Blog</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#faqs">FAQs</a></li>
+              <li><a href="/#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="clear"></div>
+      {% block content %} {%endblock content %}
+      <section id="about">
+        <main>
+          <h1>About</h1>
+          <p>
+            Prof. Dr. Irumba is the most trusted Traditional, spritual and
+            Herbal Healer he has worked for over 18 years helping people from
+            all walks of life leading a fulfilling life.
+          </p>
+          <p>
+            The healing secrets have been in his family for centuries going back
+            to his great grandfather who was one of the most trusted and
+            respected herbalist in Africa
+          </p>
+          <p>
+            Prof. Dr. Irumba is interested in meeting you or hear about your
+            problem and assist you solve it, call
+            <span class="important">+27685851567</span>
+          </p>
+        </main>
+        <aside><img src = "{% static "media/profile1.jpeg" %}"/></aside>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+        <div>
+          <label>
+            Names
+            <p>Prof. Dr. Irumba</p>
+          </label>
+          <label>
+            Address
+            <p>Durban, South Africa</p>
+          </label>
+          <label>
+            WhatsApp
+            <p>+27685851567</p>
+          </label>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110715.36036090527!2d30.920911714868353!3d-29.86845496217046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7aa0001bc61b7%3A0xcca75546c4aa6e81!2sDurban%2C%20South%20Africa!5e0!3m2!1sen!2sug!4v1664513773150!5m2!1sen!2sug"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </div>
+    <script>
+            document.querySelector(".menu-icon").addEventListener("click", () => {
+              const menuContainer = document.querySelector(".menu-container");
+              if (menuContainer.style.display === "block") {
+                menuContainer.style.display = "none";
+              } else {
+                menuContainer.style.display = "block";
+              }
+              console.log("Hello");
+            });
+
+            {% comment %} Back to top {% endcomment %}
+            // Get the button:
+      let mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
   </body>
-  <footer>The footer goes here</footer>
+  <footer>
+    <div class="company">
+      <div>
+        <h1>Prof. Dr. Irumba</h1>
+        <p>African Traditional Healer</p>
+      </div>
+    </div>
+    <div class="">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/#blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="credit">Some rights reserved &copyProfDrIrumba 2022</div>
+  </footer>
 </html>

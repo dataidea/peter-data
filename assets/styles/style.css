@@ -1,3 +1,469 @@
 *{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Anek Telugu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(43, 43, 43);
+}
+
+body{
+    /* background: whitesmoke; */
+    background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.floating-contacts a {
+    background: #228b22;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Contact */
+
+label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+label p{
+    font-weight: bold;
+}
+
+.map {
+    padding-top: 5%;
+    text-align: center;
+}
+
+.floating-contacts {
+    position: fixed;
+    top: 90%;
+    left: 80%;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+}
+
+/* navigation */
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    padding: 5px;
+    background: white;
+    font-weight: 600;
+    border: 0 2px 2px 2px  solid whitesmoke;
+    margin: auto;
+    border-radius: 0 0 5px 5px; 
+    margin-top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-container{
+    width: 100%;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.company{
+    display: flex;
+    justify-content: space-between;
+}
+
+.company p{
+    font-weight: lighter;
+}
+
+/* hero section */
+.hero{
+    display: flex;
+    flex-direction: column;
+}
+
+.hero p{
+    text-align: center;
+}
+
+.hero aside{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.hero img{
+    display: none;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    margin: 5%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none;
+    padding: 10px;
+}
+
+nav a {
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #228b22;
+    text-decoration: underline;
+}
+
+section{
+    margin-top: 5%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5%;
+    background: white;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2.5% 0%;
+    border-radius: 5px;
+}
+
+.wrapper aside {
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 10%;
+}
+
+aside div{
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.article:hover, .service:hover {
+    background: #f1f7f1;
+}
+
+.date{
+    font-weight: bold;
+}
+
+section a{
+    font-weight: bold;
+    color: #228b22;
+    text-decoration: none;
+}
+
+section a:hover{
+    text-decoration: underline;
+}
+
+.section-heading{
+    text-decoration: underline;
+}
+
+section h2 {
+    text-align: left;
+}
+
+
+.see-more{
+    display: block;
+    text-align: center;
+}
+
+.important{
+    font-weight: bold;
+}
+
+
+/* detailer */
+.detail {
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    margin-top: 5%;
+}
+
+.detail h1, .detail img, .detail p, .detail .date{
+    margin-top: 5%;
+}
+
+.share {
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+}
+
+.share a{
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.share .twitter{
+    background: #1DA1F2;
+}
+
+.share .whatsapp {
+    background: #25D366;
+}
+
+
+#about{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+#about main{
+    margin-left: 5%;
+}
+
+#about span{
+    font-size: large;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #abbaab;
+    color: #ffffff;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer li{
+    list-style: none;
+}
+
+.credit {
+    font-weight: 600;
+}
+
+.testimonials{
+    padding: 5%;
+}
+
+.testimonials-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.testimony {
+    width: 30%;
+    padding: 2.5%;
+}
+
+.testimony h3 {
+    padding: 2.5%;
+}
+
+.testimony p {
+    font-style: italic;
+    font-size: large;
+}
+
+/* Back to top */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+
+  /* Accordion */
+  /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: medium;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    #about{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    
+    .menu-icon{
+        display: block;
+    }
+
+    .menu-container{
+        display: none;
+    }
+
+    .menu-container{
+        transition: all 1s linear;
+        border: 1px solid lightgray;
+        margin: 5px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    } 
+
+    .wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .wrapper aside {
+        border-radius: 5px;
+        position: relative;
+        width: 90%;
+        margin: auto;
+    }
+
+    section h2 {
+        text-align: center;
+    }
+
+    .map {
+        padding-top: 5%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .floating-contacts {
+        position: fixed;
+        top: 90%;
+        left: 50%;
+    }
+
+    button {
+        font-weight: bold;
+        background: whitesmoke;
+        padding: 5px;
+        border: 1px solid lightgray;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        background: whitesmoke;
+    }
+
+    nav li{
+        border-bottom: 1px solid lightgray;
+        width: 80%;
+        margin: auto;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .hero img {
+        display: block;
+    }
+
+    .testimonials-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimony {
+        width: 80%;
+    }
+
+    #button {
+        margin: 30px;
+      }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    
 }

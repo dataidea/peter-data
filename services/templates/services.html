@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %} {% block content%}
+<section>
+  <h1 class="heading">Services</h1>
+  {% for service in services %}
+  <div class="wrapper">
+    <main class="service">
+      <h2>{{service.title}}</h2>
+      <p>{{service.snippet}}</p>
+      <p>{{service.date}}</p>
+      <a href="{% url 'service:detail' slug=service.slug %}">Read more</a>
+    </main>
+    <aside class="inline-image-container">
+      <img src="{{service.thumb.url}}" />
+    </aside>
+  </div>
+  <hr />
+  {% endfor %}
+</section>
+{% endblock content%}
