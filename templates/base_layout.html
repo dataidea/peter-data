@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -15,11 +16,24 @@
       href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .mySlides {
+        display: none;
+      }
+    </style>
+    <script src="{% static 'assets/JS/all.js' %}"></script>
   </head>
   <body>
+    <div class="work-time" style="background: gold"; margin: 0;>
+      <h1>I am available 24/7</h1>
+    </div>
     <div class="floating-contacts">
-      <a href="tel:++27685851567">call</a>
-      <a href="https://wa.me/+27685851567" target="_blank">WhatsApp</a>
+      <a href="tel:++27685851567" class="phone"
+        ><i class="fa-solid fa-phone"></i
+      ></a>
+      <a href="https://wa.me/+27685851567" target="_blank" class="whatsapp"
+        ><i class="fa-brands fa-whatsapp"></i> +27685851567</a
+      >
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="container">
@@ -27,10 +41,14 @@
         <nav>
           <div class="company">
             <div>
-              <h1>Prof. Dr. Irumba</h1>
-              <p>African Traditional Healer</p>
+              <a href="/">
+                <h1>Prof. Dr. Irumba</h1>
+                <p>African Traditional Healer</p>
+              </a>
             </div>
-            <button class="menu-icon">Menu</button>
+            <button class="menu-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
           <div class="menu-container">
             <ul>
@@ -76,11 +94,23 @@
           </label>
           <label>
             Address
-            <p>Durban, South Africa</p>
+            <p><i class="fa-solid fa-location-dot"></i> Durban, South Africa</p>
           </label>
           <label>
             WhatsApp
-            <p>+27685851567</p>
+            <p>
+              <a href="https://wa.me/+27685851567" target="_blank" class=""
+                ><i class="fa-brands fa-whatsapp"></i> +27685851567</a
+              >
+            </p>
+          </label>
+          <label>
+            Telephone
+            <p>
+              <a href="https://wa.me/+27685851567" target="_blank" class=""
+                ><i class="fa-solid fa-tty"></i> +27685851567</a
+              >
+            </p>
           </label>
         </div>
         <div class="map">
@@ -97,8 +127,12 @@
       </section>
     </div>
     <script>
-            document.querySelector(".menu-icon").addEventListener("click", () => {
-              const menuContainer = document.querySelector(".menu-container");
+      const nav = document.querySelector("nav")
+      let mybutton = document.getElementById("myBtn");
+      const menu_icon = document.querySelector(".menu-icon");
+      const menuContainer = document.querySelector(".menu-container")
+
+            menu_icon.addEventListener("click", () => {
               if (menuContainer.style.display === "block") {
                 menuContainer.style.display = "none";
               } else {
@@ -106,10 +140,6 @@
               }
               console.log("Hello");
             });
-
-            {% comment %} Back to top {% endcomment %}
-            // Get the button:
-      let mybutton = document.getElementById("myBtn");
 
       // When the user scrolls down 20px from the top of the document, show the button
       window.onscroll = function() {scrollFunction()};
@@ -127,6 +157,15 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
+
+      {% comment %} Handle dark mode {% endcomment %}
+
+      const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+       {% comment %} if(isSystemDark){
+        document.querySelector("body").style.backgroundColor = "#444";
+        document.querySelector("body").style.color = "#fff";
+      } {% endcomment %}
     </script>
   </body>
   <footer>

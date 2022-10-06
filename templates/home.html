@@ -110,24 +110,59 @@
   </div>
 </div>
 
+<div class="slider">
+  <h1>Service Images</h1>
+  {% for service in services %}
+  <img class="mySlides" src="{{service.thumb.url}}" style="width: 100%" />
+  {% endfor %}
+
+  <div class="slider-btns">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">
+      &#10094;
+    </button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">
+      &#10095;
+    </button>
+  </div>
+</div>
+
 <script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-      this.classList.toggle("active");
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+        this.classList.toggle("active");
 
-      /* Toggle between hiding and showing the active panel */
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+    {% comment %} Slide show {% endcomment %}
+    var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
   }
 </script>
 {% endblock content %}

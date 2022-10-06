@@ -1,25 +1,22 @@
 *{
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Anek Telugu', sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(43, 43, 43);
+    background-color: black;
+    color: whitesmoke;
+}
+
+i {
+    padding: 0 5px 0 5px;
 }
 
 body{
-    /* background: whitesmoke; */
-    background: #abbaab;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: #abbaab;  
+background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  
+background: linear-gradient(to right, #ffffff, #abbaab);  */
+    background-color:black;
 
-}
-
-.floating-contacts a {
-    background: #228b22;
-    padding: 5px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
 /* Contact */
@@ -44,8 +41,23 @@ label p{
 .floating-contacts {
     position: fixed;
     top: 90%;
-    left: 80%;
+    left: 5%;
 }
+
+.floating-contacts a {
+    background:#25D366;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 2.5px 5px 2.5px 5px;
+    color: black;
+    font-size: larger;
+    border: 1px solid #444;
+}
+
+a i {
+    background-color: transparent;
+}
+
 
 .container{
     width: 80%;
@@ -65,11 +77,10 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid lightgray;
     padding: 5px;
-    background: white;
+    background: black;
     font-weight: 600;
-    border: 0 2px 2px 2px  solid whitesmoke;
+    border-bottom: 1px solid white;
     margin: auto;
     border-radius: 0 0 5px 5px; 
     margin-top: 0;
@@ -98,10 +109,16 @@ nav{
     font-weight: lighter;
 }
 
+.company a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
 /* hero section */
 .hero{
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid white;
 }
 
 .hero p{
@@ -134,7 +151,7 @@ nav li {
 }
 
 nav a {
-    color: rgb(43, 43, 43);
+    color: white;
     text-decoration: none;
 }
 
@@ -145,10 +162,10 @@ nav a:hover{
 
 section{
     margin-top: 5%;
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     border-radius: 5px;
     padding: 5%;
-    background: white;
+    /* background: white; */
 }
 
 .wrapper{
@@ -175,9 +192,9 @@ img {
     border-radius: 5px;
 }
 
-.article:hover, .service:hover {
+/* .article:hover, .service:hover {
     background: #f1f7f1;
-}
+} */
 
 .date{
     font-weight: bold;
@@ -231,11 +248,17 @@ section h2 {
 }
 
 .share a{
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
     border: none;
     text-decoration: none;
     margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+.fa-whatsapp, .fa-location-dot, .fa-tty, .fa-phone, .fa-twitter, .fa-bars {
+    background-color: transparent;
 }
 
 .share .twitter{
@@ -268,7 +291,8 @@ footer {
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #abbaab;
+    /* background-color: #abbaab; */
+    background-color: black;
     color: #ffffff;
     padding: 5%;
     margin-top: 5%;
@@ -336,8 +360,8 @@ footer li{
   /* Accordion */
   /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: #444;
+    color: whitesmoke;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -350,15 +374,32 @@ footer li{
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    background-color: #ccc;
+    background-color: darkgrey;
   }
   
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: black;
     display: none;
     overflow: hidden;
+  }
+
+  .slider-btns{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .slider button{
+    padding: 5px;
+    width: 30%;
+    background-color: #228b22;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .slider button:hover{
+    background-color:#1DA1F2;
   }
 
 @media only screen and (max-width: 1200px){
@@ -414,24 +455,34 @@ footer li{
         margin: auto;
     }
 
+    /* contacts */
     .floating-contacts {
         position: fixed;
         top: 90%;
-        left: 50%;
+        left: 5%;
+    }
+
+    .floating-contacts a {
+        background:#25D366;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: 2.5px 5px 2.5px 5px;
+        color: #444;
+        font-size: medium;
+        border: 1px solid #444;
     }
 
     button {
         font-weight: bold;
-        background: whitesmoke;
         padding: 5px;
-        border: 1px solid lightgray;
+        outline: none;
         cursor: pointer;
     }
 
     nav ul {
         display: flex;
         flex-direction: column;
-        background: whitesmoke;
+        background: black;
     }
 
     nav li{
